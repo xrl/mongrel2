@@ -1,8 +1,9 @@
 PREFIX?=/usr/local
 CFLAGS=-I../../src $(OPTFLAGS) -g -fPIC -shared -nostartfiles -L../../build
-LDFLAGS=$(OPTLIBS)
+LDFLAGS=$(LIBS) $(OPTLIBS)
 
-all: null.so rewrite.so sendfile.so
+all: null.so rewrite.so
+# TODO: Renable sendfile.so
 
 
 %.so : %.c
