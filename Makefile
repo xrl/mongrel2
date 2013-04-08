@@ -46,11 +46,11 @@ clean:
 	rm -f tools/lemon/lemon
 	rm -f tools/m2sh/tests/tests.log 
 	find . -name "*.gc*" -exec rm {} \;
-	${MAKE} -C tools/m2sh OPTLIB=${OPTLIB} clean
-	${MAKE} -C tools/filters OPTLIB=${OPTLIB} clean
-	${MAKE} -C tests/filters OPTLIB=${OPTLIB} clean
-	${MAKE} -C tools/config_modules OPTLIB=${OPTLIB} clean
-	${MAKE} -C tools/procer OPTLIB=${OPTLIB} clean
+	${MAKE} -C tools/m2sh OPTLIBS=${OPTLIBS} clean
+	${MAKE} -C tools/filters OPTLIBS=${OPTLIBS} clean
+	${MAKE} -C tests/filters OPTLIBS=${OPTLIBS} clean
+	${MAKE} -C tools/config_modules OPTLIBS=${OPTLIBS} clean
+	${MAKE} -C tools/procer OPTLIBS=${OPTLIBS} clean
 
 pristine: clean
 	sudo rm -rf examples/python/build examples/python/dist examples/python/m2py.egg-info
